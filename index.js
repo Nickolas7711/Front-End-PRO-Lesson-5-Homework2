@@ -1,4 +1,4 @@
-debugger;
+// debugger;
 
 season = '';
 seasonCoefficient = null;
@@ -29,38 +29,36 @@ if (category === 'vegetables') {
     while (products !== 'cabbage' && products !== 'avocado' && products !== 'tomato') {
     products = prompt('Choose product from category vegetables: cabbage, avocado, tomato.').toLowerCase().replaceAll(' ', '');
     }
-
-        for (i = 0; i !== vegetables.length; i++) {
-                element = vegetables[i];
-                if (element.indexOf(products) == 0)
-                {
-                    price = vegetables[i][1];
-                    
-                }    
-            }
-
-
-
-} else if (category === 'fruits') {
-        while (products !== 'grapes' && products !== 'raspberry' && products !== 'coconut') {
-        products = prompt('Choose product from category fruits: grapes, raspberry, coconut.').toLowerCase().replaceAll(' ', '');
-        }
-
-        for (i = 0; i !== fruits.length; i++) {
-            element = fruits[i];
-            if (element.indexOf(products) == 0)
-            {
-                price = fruits[i][1];
-                
-            }    
-        }
 }
 
-do {
-    productQuantity = parseInt(prompt(`Enter count of ${products}`));
-} while (!productQuantity || isNaN(productQuantity) && productQuantity > 1);
+for (i = 0; i !== vegetables.length; i++) {
+    element = vegetables[i];
+    if (element.indexOf(products) == 0) {
+    price = vegetables[i][1];
+    }    
+}
 
-result = (price * productQuantity) * seasonCoefficient;
+if (category === 'fruits') {
+    while (products !== 'grapes' && products !== 'raspberry' && products !== 'coconut') {
+    products = prompt('Choose product from category fruits: grapes, raspberry, coconut.').toLowerCase().replaceAll(' ', '');
+    }
+
+    for (i = 0; i !== fruits.length; i++) {
+        element = fruits[i];
+        if (element.indexOf(products) == 0) {
+            price = fruits[i][1];
+            
+        }    
+    }
+}
+
+productQuantity = 0;
+
+do {
+    productQuantity = +prompt(`Enter count of ${products}`);
+} while (isNaN(productQuantity) || productQuantity <= 1); 
+
+result = (Math.ceil(price * productQuantity * seasonCoefficient));
 
 document.write('<div class="product" align="center">');
 document.write(`<img src='style/images/${category}/${products}.svg' width="100" height="100">`);

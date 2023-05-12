@@ -29,13 +29,13 @@ if (category === 'vegetables') {
     while (products !== 'cabbage' && products !== 'avocado' && products !== 'tomato') {
     products = prompt('Choose product from category vegetables: cabbage, avocado, tomato.').toLowerCase().replaceAll(' ', '');
     }
-}
 
-for (i = 0; i !== vegetables.length; i++) {
-    element = vegetables[i];
-    if (element.indexOf(products) == 0) {
-    price = vegetables[i][1];
-    }    
+    for (i = 0; i !== vegetables.length; i++) {
+        element = vegetables[i];
+        if (element.indexOf(products) == 0) {
+        price = vegetables[i][1];
+        }    
+    }
 }
 
 if (category === 'fruits') {

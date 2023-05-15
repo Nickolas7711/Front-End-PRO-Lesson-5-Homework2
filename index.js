@@ -60,7 +60,7 @@ do {
 
 result = (Math.ceil(price * productQuantity * seasonCoefficient));
 
-document.write('<div class="product" align="center">');
+document.write('<div class="product" align="center" style="width: 310px; height: 310px; margin: auto; box-shadow: 2px 2px 12px rgb(0 0 0 / 12%);">');
 document.write(`<img src='style/images/${category}/${products}.svg' width="100" height="100">`);
 document.write(`<p>Selected product: <b>${products}</b></p>`);
 document.write(`<p>Count of ${products}s: <b>${productQuantity}</b></p>`);
